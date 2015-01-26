@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="store">
+    <title>Angular</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="views/css/bootstrap.min.css" />
+    <script type="text/javascript" src="views/js/angular.min.js"></script>
+    <script type="text/javascript" src="views/js/app00.js"></script>
+</head>
+<body ng-controller="StoreController as store">
+    <div ng-repeat=" product in store.products">
+        <div ng-hide="product.soldOut">
+            <h1>{{product.name}}</h1>
+            <h1>${{product.price}}</h1>
+            <h1>{{product.description}}</h1>
+            <button ng-show="store.product.canPurchase">Add to Cart</button>
+        </div>
+    </div>
+    <!-- 
+        <div ng-hide="store.product[0].soldOut">
+            <h1>{{store.product[0].name}}</h1>
+            <h1>${{store.product[0].price}}</h1>
+            <h1>{{store.product[0].description}}</h1>
+            <button ng-show="store.product[0].canPurchase">Add to Cart</button>
+        </div>
+    -->
+    <!--<p>{{6 + 4}}</p>-->
+</body>
+</html>

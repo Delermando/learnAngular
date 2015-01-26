@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="store">
+    <title>Angular</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="views/css/bootstrap.min.css" />
+    <script type="text/javascript" src="views/js/angular.min.js"></script>
+    <script type="text/javascript" src="views/js/app01.js"></script>
+</head>
+<body ng-controller="StoreController as store">
+    <ul class="list-group">
+        <!--<li class="list-group-item" ng-repeat="product in store.products | orderBy: '-price'">or +price-->
+        <li class="list-group-item" ng-repeat="product in store.products"><!--or +price-->
+            <h3>
+                {{product.name}}
+                <em class="pull-right">{{product.price | currency}}</em>
+                <!--<div class="gallery" ng-show="product.images.length"> usando o lengh junto com o show exibe a galeria apenas se tiver imagens nela-->
+                <img ng-src="{{product.images[0].full}}" />
+                <!--<em class="pull-right">{{'octagon' | uppercase}}</em>-->
+                <!--<em class="pull-right">{{'My Description' | limitTo:8}}</em>-->
+                <!--<em class="pull-right">{{'1388123412323' | date:'MM/dd/yyyy -|- h:mma'}}</em>-->
+            </h3>
+        </li>
+    </ul>
+</body>
+</html>
